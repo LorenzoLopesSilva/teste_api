@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "main.py", // ou o nome do seu arquivo de entrada
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)", // Roteia todas as requisições para o seu código Python
+      "dest": "main.py"
+    }
+  ]
+}
