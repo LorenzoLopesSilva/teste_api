@@ -1,4 +1,4 @@
-{
+
   "builds": [
     {
       "src": "main.py", // ou o nome do seu arquivo de entrada
@@ -11,4 +11,4 @@
       "dest": "main.py"
     }
   ]
-}
+
