@@ -15,13 +15,13 @@ origins = [
     "*"
 ]
 
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=origins,
-#     allow_credencials=False,
-#     allow_methods=["*"],
-#     allow_headers=["*"]
-# )
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credencials=False,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
 
 @app.post("/items/")
 async def criar_item(item: Item):
