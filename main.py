@@ -28,6 +28,6 @@ async def criar_item(item: Item):
 
     return {"mensagem": f"Item '{item.nome}' criado com sucesso!"}
 
-# @app.get("/")
-# async def read_root():
-#     return {"hello": "World"}
+@app.get("/")
+async def read_root():
+    return {"hello": "World"}
