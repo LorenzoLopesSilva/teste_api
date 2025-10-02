@@ -6,7 +6,7 @@ class Item(BaseModel):
     nome: str
     email: str
 
-
+#
 
 app = FastAPI()
 
