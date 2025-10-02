@@ -25,9 +25,7 @@ app.add_middleware(
 
 @app.post("/items/")
 async def criar_item(item: Item):
-    """
-    Recebe dados JSON, os valida e retorna uma mensagem de confirmação.
-    """
+    
     return {"mensagem": f"Item '{item.nome}' criado com sucesso!"}
 
 @app.get("/")
