@@ -27,7 +27,7 @@ app.add_middleware(
 @app.post("/items/")
 async def criar_item(item: Item):
 
-    return{"mensagem": f"Olá {nome}"}
+    return{"mensagem": f"Olá"}
 
     # return JSONResponse (
     #     content={"mensagem": f"Seja bem vindo {nome}"}
