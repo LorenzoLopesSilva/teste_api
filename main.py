@@ -10,7 +10,6 @@ class Item(BaseModel):
 
 app = FastAPI()
 
-allow_methods = ["POST", "GET", "OPTIONS", "PUT", "DELETE", "PATCH"]
 
 origins = [
     "*"
@@ -19,7 +18,7 @@ origins = [
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
-    allow_credencials=True,
+    allow_credencials=False,
     allow_methods=["*"],
     allow_headers=["*"]
 )
