@@ -6,7 +6,11 @@ class Item(BaseModel):
     nome: str
     email: str
 
+
+
 app = FastAPI()
+
+allow_methods = ["POST", "GET", "OPTIONS", "PUT", "DELETE", "PATCH"]
 
 origins = [
     "*"
