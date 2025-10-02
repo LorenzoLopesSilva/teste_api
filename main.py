@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-from starlette.responses import JSONResponse
+# from starlette.responses import JSONResponse
 
 class Item(BaseModel):
     nome: str
@@ -27,9 +27,11 @@ app.add_middleware(
 @app.post("/items/")
 async def criar_item(item: Item):
 
-    return JSONResponse (
-        content={"mensagem": f"Seja bem vindo {nome}"}
-    )
+    return{"mensagem": f"Olá {nome}"}
+
+    # return JSONResponse (
+    #     content={"mensagem": f"Seja bem vindo {nome}"}
+    # )
 
 @app.get("/")
 async def read_root():
