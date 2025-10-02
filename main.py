@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from fastapi.middleware.cors import CORSMiddleware
+# from fastapi.middleware.cors import CORSMiddleware
 
 class Item(BaseModel):
     nome: str
@@ -15,19 +15,19 @@ origins = [
     "*"
 ]
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credencials=False,
-    allow_methods=["*"],
-    allow_headers=["*"]
-)
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=origins,
+#     allow_credencials=False,
+#     allow_methods=["*"],
+#     allow_headers=["*"]
+# )
 
 @app.post("/items/")
 async def criar_item(item: Item):
-    
+
     return {"mensagem": f"Item '{item.nome}' criado com sucesso!"}
 
-@app.get("/")
-async def read_root():
-    return {"hello": "World"}
+# @app.get("/")
+# async def read_root():
+#     return {"hello": "World"}
