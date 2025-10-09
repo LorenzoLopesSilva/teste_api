@@ -39,4 +39,4 @@ async def read_root():
 
 @app.get('/teste/')
 async def read_root():
-    return {"Hello": "JaaJ"}
+    return {"Hello": "Nova Branch"}
