@@ -36,3 +36,5 @@ async def criar_item(item: Item):
 @app.get("/")
 async def read_root():
     return {"hello": "World"}
+
+return {"hello": "JaaJ"}
