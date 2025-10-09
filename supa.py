@@ -1,2 +1,3 @@
-#teste
-return {"hello": "JaaJ"}
+@app.get("/")
+async def read_root():
+    return {"hello": "jaaj"}
