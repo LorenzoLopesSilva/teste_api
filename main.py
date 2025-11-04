@@ -14,6 +14,11 @@ vendas = {
 def home():
     return {"Vendas": len(vendas)}
 
+@app.get("/vendas/{id_venda}")
+def pegar_venda(id_venda: int):
+    return vendas[id_venda]
+
+
 @app.get("/teste/")
 def teste():
     return "Odinospitos"
