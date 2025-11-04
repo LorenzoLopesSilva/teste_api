@@ -34,4 +34,4 @@ def teste():
 
 @app.post("/teste-post/")
 def create_item(pessoa: Pessoas):
-    return pessoa
+    return pessoa.nome
