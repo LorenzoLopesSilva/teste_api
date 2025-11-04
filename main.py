@@ -25,3 +25,7 @@ def pegar_venda(id_venda: int):
 @app.get("/teste/")
 def teste():
     return "Odinospitos"
+
+@app.post("/teste-post/")
+def create_item(nome: str, idade: int):
+    return {"nome": nome, "idade": idade}
