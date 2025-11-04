@@ -1,19 +1,12 @@
-from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
+from fastapi import FastAPI, Form
+from fastapi.responses import FileResponse
 
 app = FastAPI()
 
-@app.get("/items/")
-async def read_items():
-    html_content = """ 
-    <html>
-        <head>
-            <title>HTML</title>
-        </head>
-        <body>
-            <h1>Hello World</p>
-        </body>
-    </html>
-    """
+@app.get("/")
+def root():
+    return FileResponse("public/index.html")
 
-    return HTMLResponse(content=html_content, status_code=200)
+@app.post("/postdata")
+def postdata(username: str = Form(), userage: int = Form()):
+    return {"name": username, "age": userage}
