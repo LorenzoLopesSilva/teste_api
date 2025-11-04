@@ -1,14 +1,15 @@
 #-------------------------------------------------------
 import pandas as pd
 
-planilha = pd.read_excel('teste.xlsx', sheet_name='Planilha')
+planilha = pd.read_excel('sub-faturamento.xlsx', sheet_name='Sheet1')
+
 
 pessoas = {}
 
 for i in range(len(planilha)):
-    nome = planilha.iloc[i].iloc[0]
-    idade = int(planilha.iloc[i].iloc[1])
-    pessoas[i] = {"nome": nome, "idade": idade}
+    fornecedor = planilha.iloc[i].iloc[6]
+    email = planilha.iloc[i].iloc[7]
+    pessoas[i] = {"fornecedor": fornecedor, "email": email}
 
 print(pessoas)
 
