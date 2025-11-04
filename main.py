@@ -1,42 +1,19 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
-from fastapi.middleware.cors import CORSMiddleware
-from starlette.responses import JSONResponse
-
-class Item(BaseModel):
-    nome: str
-    email: str
-
-#
+from fastapi.responses import HTMLResponse
 
 app = FastAPI()
 
+@app.get("/items/")
+async def read_items():
+    html_content = """ 
+    <html>
+        <head>
+            <title>HTML</title>
+        </head>
+        <body>
+            <h1>Hello World</p>
+        </body>
+    </html>
+    """
 
-origins = [
-    "*"
-]
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=False,
-    allow_methods=["*"],
-    allow_headers=["*"]
-)
-
-@app.post("/items/")
-async def criar_item(item: Item):
-
-    # return{"mensagem": f"Olá {item.nome}"}
-
-    return JSONResponse (
-        content={"mensagem": f"Seja bem vindo {item.nome}"}
-    )
-
-@app.get("/")
-async def read_root():
-    return {"hello": "World"}
-
-@app.get('/teste/')
-async def read_root():
-    return {"Hello": "JaaJ"}
+    return HTMLResponse(content=html_content, status_code=200)
