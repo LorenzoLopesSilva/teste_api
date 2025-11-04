@@ -1,4 +1,10 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
+
+class Pessoas(BaseModel):
+    nome: str
+    idade: int | None = None
+    email: str
 
 app = FastAPI()
 
@@ -27,5 +33,5 @@ def teste():
     return "Odinospitos"
 
 @app.post("/teste-post/")
-def create_item(nome: str, idade: int):
-    return {"nome": nome, "idade": idade}
+def create_item(pessoa: Pessoas):
+    return pessoa
