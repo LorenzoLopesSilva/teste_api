@@ -5,7 +5,7 @@ app = FastAPI()
 
 @app.get("/")
 def root():
-    return FileResponse("public/index.html")
+    return FileResponse("index.html")
 
 @app.post("/postdata")
 def postdata(username: str = Form(), userage: int = Form()):
