@@ -11,5 +11,5 @@ def root():
 def postdata():
     return "AAAAAAAAAA"
 
-# def postdata(username: str = Form(), userage: int = Form()):
-#     return {"name": username, "age": userage}
+def postdata(username: str = Form(), userage: int = Form()):
+    return {"name": username, "age": userage}
