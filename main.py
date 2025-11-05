@@ -1,6 +1,8 @@
 from fastapi import FastAPI, Form
 from fastapi.responses import FileResponse
 
+pessoas = []
+
 app = FastAPI()
 
 @app.get("/")
@@ -10,4 +12,5 @@ def root():
 @app.post("/postdata/")
 
 def postdata(username: str = Form(), userage: int = Form()):
-    return {"name": username, "age": userage}
+    pessoas.append({"name": username, "age": userage})
+    return root()
