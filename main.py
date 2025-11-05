@@ -13,5 +13,5 @@ def root():
 
 def postdata(escolha: str = Form()):
     if escolha == 'escolha1':
-        return FileResponse("/paginas/escolha1.html")
+        return FileResponse("./paginas/escolha1.html")
     
