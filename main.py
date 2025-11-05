@@ -12,5 +12,6 @@ def root():
 @app.post("/postdata/")
 
 def postdata(escolha: str = Form()):
-    return {'escolha': escolha}
+    if escolha == 'escolha1':
+        return FileResponse("/paginas/escolha1.html")
     
