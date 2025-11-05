@@ -11,6 +11,6 @@ def root():
 
 @app.post("/postdata/")
 
-def postdata(username: str = Form(), userage: int = Form()):
-    pessoas.append({"name": username, "age": userage})
-    return root()
+def postdata(escolha: str = Form()):
+    return {'escolha': escolha}
+    

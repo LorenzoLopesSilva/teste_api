@@ -7,14 +7,11 @@
   <body>
     <h2>Formulário de Entrada</h2>
     <form action="postdata" method="post">
-      <p>
-        Nome:<br />
-        <input name="username" />
-      </p>
-      <p>
-        Idade:<br />
-        <input name="userage" type="number" />
-      </p>
+      <label for="escolha">Escolha: </label>
+      <select name="escolha" id="">
+        <option value="escolha1">Escolha 1</option>
+        <option value="escolha2">Escolha 2</option>
+      </select>
       <input type="submit" value="Enviar" />
     </form>
   </body>
